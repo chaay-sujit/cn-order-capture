@@ -18,7 +18,21 @@ public class CNUserService {
 		userRepository.save(user);
 	}
 
-	public List<CNUser> fetchUsers() {
+	public void updateUser(CNUser user) {
+		userRepository.save(user);
+	}
+
+	public CNUser fetchUserDetails(String userId) {
+		List<CNUser> userList = new ArrayList<CNUser>();
+		userRepository.findAll().forEach(userList::add);
+		return userList.stream().filter(user -> user.getUserId().equals(userId)).findFirst().get();
+	}
+
+	public void deleteUser(String userId) {
+		userRepository.delete(userId);
+	}
+
+	public List<CNUser> fetchUserList() {
 		List<CNUser> userList = new ArrayList<CNUser>();
 		userRepository.findAll().forEach(userList::add);
 		return userList;

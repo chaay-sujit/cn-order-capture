@@ -24,6 +24,12 @@ public class CNUser {
 	@Column(name = "LAST_NAME")
 	private String lastName;
 
+	@Column(name = "EMAIL")
+	private String email;
+
+	@Column(name = "PHONE")
+	private String phone;
+
 	public CNUser() {
 
 	}
@@ -64,6 +70,22 @@ public class CNUser {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }
